@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="translator.xsl" type="text/xsl"?>
+
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="schema.xsd"
+>
+    <brands>
+        <brand>Logitech</brand>
+        <brand>Microsoft</brand>
+        <brand>Dell</brand>
+        <brand>Apple</brand>
+    </brands>
+
+    <products>
+        <product xsi:type="keyboardType">
+            <colors>
+                <color>black</color>
+                <color>white</color>
+            </colors>
+
+            <image src="images/keyboard1.jpg"/>
+            <name>Logitech G413</name>
+            <brand>Logitech</brand>
+            <model>G413</model>
+            <price currency="BGN">118.99</price>
+            
+            <type>mechanical</type>
+            <full-sized>true</full-sized>
+            <connectivity>wired</connectivity>
+        </product>
+
+        <product xsi:type="keyboardType">
+            <colors>
+                <color>black</color>
+            </colors>
+
+            <image src="images/keyboard2.jpg"/>
+            <name>Microsoft Ergonomic Keyboard</name>
+            <brand>Microsoft</brand>
+            <model>LXM-00004</model>
+            <price currency="EUR">189.99</price>
+            
+            <type>membrane</type>
+            <full-sized>false</full-sized>
+            <connectivity>wireless</connectivity>
+        </product>
+
+        <product xsi:type="mouseType">
+            <colors>
+                <color>black</color>
+                <color>white</color>
+            </colors>
+
+            <image src="images/mouse1.jpeg"/>
+            <name>Apple Magic Mouse</name>
+            <brand>Apple</brand>
+            <model>Magic Mouse</model>
+            <price currency="EUR">79.99</price>
+            
+            <dpi>1300</dpi>
+            <buttons>1</buttons>
+            <connectivity>bluetooth</connectivity>
+        </product>
+
+        <product xsi:type="laptopType">
+            <image src="images/laptop1.jpg"/>
+            <name>Apple MacBook Pro 14 (M3)</name>
+            <brand>Apple</brand>
+            <model>MacBook Pro 14 M3</model>
+            <price currency="BGN">3799.99</price>
+            
+            <os>MacOS</os>
+            <processor>Apple M3</processor>
+            <ram>8</ram>
+            <storage unit="GB">512</storage>
+
+            <keyboard>
+                <type>membrane</type>
+                <full-sized>true</full-sized>
+                <connectivity>embedded</connectivity>
+            </keyboard>
+
+            <display>
+                <resolution>3024x1964</resolution>
+                <refreshRate>60</refreshRate>
+                <diagonalSize>14</diagonalSize>
+            </display>
+        </product>
+
+        <product xsi:type="laptopType">
+            <image src="images/laptop2.avif"/>
+            <name>Dell XPS 16</name>
+            <brand>Dell</brand>
+            <model>XPS 16</model>
+            <price>6627.99</price>
+            
+            <os>Windows</os>
+            <processor>Intel Core Ultra 7</processor>
+            <ram>16</ram>
+            <storage unit="TB">2</storage>
+
+            <keyboard>
+                <type>membrane</type>
+                <full-sized>false</full-sized>
+                <connectivity>embedded</connectivity>
+            </keyboard>
+
+            <display>
+                <resolution>1920x1080</resolution>
+                <refreshRate>60</refreshRate>
+                <diagonalSize>13</diagonalSize>
+            </display>
+        </product>
+
+        <product xsi:type="laptopType">
+            <image src="images/laptop3.jpg"/>
+            <name>Microsoft Surface Laptop 4</name>
+            <brand>Microsoft</brand>
+            <model>Surface Laptop 4</model>
+            <price currency="EUR">1199.99</price>
+            
+            <os>Windows</os>
+            <processor>Intel Core i5</processor>
+            <ram>8</ram>
+            <storage unit="GB">256</storage>
+
+            <keyboard>
+                <type>membrane</type>
+                <full-sized>true</full-sized>
+                <connectivity>embedded</connectivity>
+            </keyboard>
+
+            <display>
+                <resolution>2256x1504</resolution>
+                <refreshRate>60</refreshRate>
+                <diagonalSize>13.5</diagonalSize>
+            </display>
+        </product>
+
+        <product xsi:type="desktopType">
+            <image src="images/desktop1.jpg"/>
+            <name>Apple Mac Mini</name>
+            <brand>Apple</brand>
+            <model>Mac Mini</model>
+            <price currency="EUR">649.99</price>
+            
+            <os>MacOS</os>
+            <processor>Apple M1</processor>
+            <ram>8</ram>
+            <storage unit="GB">512</storage>
+        </product>
+
+        <product xsi:type="displayType">
+            <colors>
+                <color>black</color>
+            </colors>
+
+            <image src="images/monitor1.jpg"/>
+            <name>Dell UltraSharp U2415</name>
+            <brand>Dell</brand>
+            <model>UltraSharp U2415</model>
+            <price currency="BGN">249.99</price>
+
+            <resolution>1920x1200</resolution>
+            <refreshRate>60</refreshRate>
+            <diagonalSize>24</diagonalSize>
+        </product>
+
+        <product xsi:type="displayType">
+            <image src="images/monitor2.avif"/>
+            <name>Dell S2721DGF</name>
+            <brand>Dell</brand>
+            <model>S2721DGF</model>
+            <price currency="BGN">799.99</price>
+
+            <resolution>2560x1440</resolution>
+            <refreshRate>165</refreshRate>
+            <diagonalSize>27</diagonalSize>
+        </product>
+
+    </products>
+
+</catalog>
