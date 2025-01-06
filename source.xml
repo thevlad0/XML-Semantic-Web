@@ -92,7 +92,7 @@
             <name>Dell XPS 16</name>
             <brand>Dell</brand>
             <model>XPS 16</model>
-            <price>6627.99</price>
+            <price currency="BGN">6627.99</price>
             
             <os>Windows</os>
             <processor>Intel Core Ultra 7</processor>
