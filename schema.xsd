@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+>
+
+<!-- ROOT ELEMENT DEFINITION -->
+<xs:element name="catalog">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="brands" type="brandsSelectorType"/>
+            <xs:element name="products" type="productsSelectorType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Key definitions -->
+    <xs:key name="brandKey">
+        <xs:selector xpath="brands/brand"/>
+        <xs:field xpath="."/>
+    </xs:key>
+
+    <!-- Keyref definitions -->
+    <xs:keyref name="brandRef" refer="brandKey">
+        <xs:selector xpath="products/product"/>
+        <xs:field xpath="brand"/>
+    </xs:keyref>
+
+</xs:element>
+
+<!-- MAIN TYPE DEFINITIONS -->
+
+<!-- Base product type definition -->
+<xs:complexType name="productType">
+    <xs:sequence>
+        <xs:element name="colors" type="colorsSelectorType" minOccurs="0"/>
+
+        <xs:element name="image" type="imageType" minOccurs="0"/>
+        <xs:element name="name" type="xs:string" minOccurs="0"/>
+        <xs:element name="brand" type="xs:string" minOccurs="0"/>
+        <xs:element name="model" type="xs:string" minOccurs="0"/>
+        <xs:element name="price" type="priceType" minOccurs="0"/>
+    </xs:sequence>
+</xs:complexType>
+
+<!-- Specific product type definitions -->
+
+<xs:complexType name="keyboardType">
+    <xs:complexContent>
+        <xs:extension base="productType">
+            <xs:sequence>
+                <xs:element name="type">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="mechanical"/>
+                            <xs:enumeration value="membrane"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="full-sized" type="xs:boolean"/>
+                <xs:element name="connectivity" type="connectivityType"/>
+            </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="mouseType">
+    <xs:complexContent>
+        <xs:extension base="productType">
+            <xs:sequence>
+                <xs:element name="dpi" type="xs:positiveInteger"/>
+                <xs:element name="buttons" type="xs:positiveInteger"/>
+                <xs:element name="connectivity" type="connectivityType"/>
+            </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="displayType">
+    <xs:complexContent>
+        <xs:extension base="productType">
+            <xs:sequence>
+                <xs:element name="resolution" type="xs:string"/>
+                <xs:element name="refreshRate" type="xs:positiveInteger"/>
+                <xs:element name="diagonalSize" type="xs:decimal"/>
+            </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="laptopType">
+    <xs:complexContent>
+        <xs:extension base="productType">
+            <xs:sequence>
+                <xs:element name="os" type="osType"/>
+                <xs:element name="processor" type="xs:string"/>
+                <xs:element name="ram" type="xs:positiveInteger"/>
+                <xs:element name="storage" type="storageType"/>
+                <xs:element name="mouse" type="mouseType" minOccurs="0"/>
+                <xs:element name="keyboard" type="keyboardType" minOccurs="0"/>
+                <xs:element name="display" type="displayType" minOccurs="0"/>
+            </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="desktopType">
+    <xs:complexContent>
+        <xs:extension base="laptopType"/>
+    </xs:complexContent>
+</xs:complexType>
+
+<!-- UTILITY TYPE DEFINITIONS -->
+
+<!-- Readability type definitions -->
+<xs:complexType name="brandsSelectorType">
+    <xs:sequence>
+        <xs:element name="brand" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="colorsSelectorType">
+    <xs:sequence>
+        <xs:element name="color" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productsSelectorType">
+    <xs:sequence>
+        <xs:element name="product" type="productType" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<!-- Content simplification type definitions -->
+<xs:simpleType name="osType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Windows"/>
+        <xs:enumeration value="MacOS"/>
+        <xs:enumeration value="Linux"/>
+        <xs:enumeration value="none"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="storageType">
+    <xs:simpleContent>
+        <xs:extension base="positiveValueRestriction">
+            <xs:attribute name="unit" type="storageUnitType" use="required"/>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:simpleType name="storageUnitType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="GB"/>
+        <xs:enumeration value="TB"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="connectivityType">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="wired"/>
+        <xs:enumeration value="wireless"/>
+        <xs:enumeration value="bluetooth"/>
+        <xs:enumeration value="embedded"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="imageType">
+    <xs:attribute name="src" type="xs:anyURI" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="priceType">
+    <xs:simpleContent>
+        <xs:extension base="positiveValueRestriction">
+            <xs:attribute name="currency">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="BGN"/>
+                        <xs:enumeration value="EUR"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:simpleType name="positiveValueRestriction">
+    <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0"/>
+    </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>
