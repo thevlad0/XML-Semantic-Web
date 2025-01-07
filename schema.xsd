@@ -24,7 +24,6 @@
         <xs:selector xpath="products/product"/>
         <xs:field xpath="brand"/>
     </xs:keyref>
-
 </xs:element>
 
 <!-- MAIN TYPE DEFINITIONS -->
