@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="translator.xsl" type="text/xsl"?>
-<!DOCTYPE catalog SYSTEM "entities.dtd">
+<!DOCTYPE catalog SYSTEM "entities.dtd" [
+    <!ENTITY desktop1  SYSTEM "./images/desktop1.jpg"  NDATA jpg>
+    <!ENTITY keyboard1 SYSTEM "./images/keyboard1.jpg" NDATA jpg>
+    <!ENTITY keyboard2 SYSTEM "./images/keyboard2.jpg" NDATA jpg>
+    <!ENTITY laptop1   SYSTEM "./images/laptop1.jpg"   NDATA jpg>
+    <!ENTITY laptop2   SYSTEM "./images/laptop2.avif"  NDATA avif>
+    <!ENTITY laptop3   SYSTEM "./images/laptop3.jpg"   NDATA jpg>
+    <!ENTITY monitor1  SYSTEM "./images/monitor1.jpg"  NDATA jpg>
+    <!ENTITY monitor2  SYSTEM "./images/monitor2.avif" NDATA avif>
+    <!ENTITY mouse1    SYSTEM "./images/mouse1.jpeg"   NDATA jpg>
+]>
 
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="schema.xsd"
