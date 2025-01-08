@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="translator.xsl" type="text/xsl"?>
+<!DOCTYPE catalog SYSTEM "entities.dtd">
 
 <catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="schema.xsd"
@@ -18,7 +19,7 @@
                 <color>white</color>
             </colors>
 
-            <image src="images/keyboard1.jpg"/>
+            <image src="keyboard1"/>
             <name>Logitech G413</name>
             <brand>Logitech</brand>
             <model>G413</model>
@@ -34,7 +35,7 @@
                 <color>black</color>
             </colors>
 
-            <image src="images/keyboard2.jpg"/>
+            <image src="keyboard2"/>
             <name>Microsoft Ergonomic Keyboard</name>
             <brand>Microsoft</brand>
             <model>LXM-00004</model>
@@ -51,7 +52,7 @@
                 <color>white</color>
             </colors>
 
-            <image src="images/mouse1.jpeg"/>
+            <image src="mouse1"/>
             <name>Apple Magic Mouse</name>
             <brand>Apple</brand>
             <model>Magic Mouse</model>
@@ -63,7 +64,7 @@
         </product>
 
         <product xsi:type="laptopType">
-            <image src="images/laptop1.jpg"/>
+            <image src="laptop1"/>
             <name>Apple MacBook Pro 14 (M3)</name>
             <brand>Apple</brand>
             <model>MacBook Pro 14 M3</model>
@@ -88,7 +89,7 @@
         </product>
 
         <product xsi:type="laptopType">
-            <image src="images/laptop2.avif"/>
+            <image src="laptop2"/>
             <name>Dell XPS 16</name>
             <brand>Dell</brand>
             <model>XPS 16</model>
@@ -113,7 +114,7 @@
         </product>
 
         <product xsi:type="laptopType">
-            <image src="images/laptop3.jpg"/>
+            <image src="laptop3"/>
             <name>Microsoft Surface Laptop 4</name>
             <brand>Microsoft</brand>
             <model>Surface Laptop 4</model>
@@ -138,7 +139,7 @@
         </product>
 
         <product xsi:type="desktopType">
-            <image src="images/desktop1.jpg"/>
+            <image src="desktop1"/>
             <name>Apple Mac Mini</name>
             <brand>Apple</brand>
             <model>Mac Mini</model>
@@ -155,7 +156,7 @@
                 <color>black</color>
             </colors>
 
-            <image src="images/monitor1.jpg"/>
+            <image src="monitor1"/>
             <name>Dell UltraSharp U2415</name>
             <brand>Dell</brand>
             <model>UltraSharp U2415</model>
@@ -167,7 +168,7 @@
         </product>
 
         <product xsi:type="displayType">
-            <image src="images/monitor2.avif"/>
+            <image src="monitor2"/>
             <name>Dell S2721DGF</name>
             <brand>Dell</brand>
             <model>S2721DGF</model>

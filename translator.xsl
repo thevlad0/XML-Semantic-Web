@@ -282,7 +282,7 @@
         
         <img>
             <xsl:attribute name="src">
-                <xsl:value-of select="image/@src"/>
+                <xsl:value-of select="unparsed-entity-uri(image/@src)"/>
             </xsl:attribute>
         </img>
         <h3><xsl:value-of select="name"/></h3>
@@ -303,7 +303,7 @@
 
         <img>
             <xsl:attribute name="src">
-                <xsl:value-of select="image/@src"/>
+                <xsl:value-of select="unparsed-entity-uri(image/@src)"/>
             </xsl:attribute>
         </img>
         <h3><xsl:value-of select="name"/></h3>
